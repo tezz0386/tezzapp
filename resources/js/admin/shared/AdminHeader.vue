@@ -155,22 +155,53 @@
             >
           </div>
         </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            data-widget="control-sidebar"
-            data-slide="true"
-            href="#"
-            role="button"
-          >
-            <i class="fas fa-th-large"></i>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="fa fa-user"></i>
           </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-item dropdown-header">Tejendra Dangaura</span>
+            <div class="dropdown-divider"></div>
+            <router-link to="/admin/profile" class="dropdown-item">
+              Profile
+            </router-link>
+            <div class="dropdown-divider"></div>
+            <router-link to="#" class="dropdown-item">
+              Setting
+            </router-link>
+          </div>
         </li>
+        <a class="nav-link" href="#" @click="logout">
+            Logout
+        </a>
+
+
       </ul>
     </nav>
     <!-- /.navbar -->
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+        logout(e) {
+            console.log('ss')
+            e.preventDefault()
+            this.$axios.get('/sanctum/csrf-cookie').then(response => {
+                this.$axios.post('/api/logout')
+                    .then(response => {
+                        if (response.data.success) {
+                            window.location.href = "/"
+                        } else {
+                            console.log(response)
+                        }
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+            })
+        }
+    },
+};
 </script>

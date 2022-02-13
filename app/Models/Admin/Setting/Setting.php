@@ -19,6 +19,7 @@ class Setting extends Model
         'facebook_link',
         'twitter_link',
         'instagram_link',
+        'linkedin_link',
         'google_link',
         'whatsapp_no',
         'viber_no',

@@ -10,6 +10,9 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 
 
+import CKEditor from '@ckeditor/ckeditor5-vue';
+
+
 const options = {
     color: "#bffaf3",
     failedColor: "#874b4b",
@@ -29,5 +32,6 @@ const app = createApp(App)
 app.config.globalProperties.$axios = axios;
 app.use(router)
 app.use(VueProgressBar, options)
-app.use(VueSweetalert2);
+app.use(VueSweetalert2)
+app.use( CKEditor )
 app.mount('#app')

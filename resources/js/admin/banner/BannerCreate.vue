@@ -165,7 +165,7 @@ export default {
     if (window.Laravel.user) {
       this.name = window.Laravel.user.name;
     }
-    this.banner.status='Active';
+    this.banner.status='active';
     this.$Progress.finish();
   },
   beforeRouteEnter(to, from, next) {

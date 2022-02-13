@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{asset('dashboard/plugins/jqvmap/jqvmap.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dashboard/dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('dashboard/dist/css/custom.css')}}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{asset('dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Daterange picker -->
@@ -28,6 +29,7 @@
     <meta name="csrf-token" value="{{ csrf_token() }}"/>
     <title>{{env('APP_NAME')}}</title>
     {{-- <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet"/> --}}
+
 </head>
 <body class="text-sm">
 
@@ -91,5 +93,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dashboard/dist/js/demo.js')}}"></script>
 
-</body>
+
+    
+</body> 
 </html>
